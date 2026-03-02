@@ -1,0 +1,79 @@
+{
+  // -------------------------------------------------------------------------------------------------------------------------
+  // ✏️ Editor
+  // Code editor: formatting, behavior, and appearance
+  // -------------------------------------------------------------------------------------------------------------------------
+
+  // 📐 Indentation & whitespace ---------------------------------------------------------------------------------------------
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,                                                 // Use spaces, not tabs
+  "editor.trimAutoWhitespace": true,                                           // Trim auto-inserted whitespace
+  "editor.renderWhitespace": "boundary",                                       // Show whitespace at boundaries
+  "editor.rulers": [{ "column": 127 }],
+  "editor.quickSuggestions": {                                                 // Enable inline suggestions for all contexts
+    "strings": "on"
+  },
+
+  // -------------------------------------------------------------------------------------------------------------------------
+  // 📄 Files
+  // File handling, encoding, and visibility
+  // -------------------------------------------------------------------------------------------------------------------------
+
+  "files.associations": {
+    "*.json": "json",
+    "settings.json": "jsonc",                                                  // ⚠️ Use JSON with comments for settings file
+    "extensions.json": "jsonc",                                                // ⚠️ Use JSON with comments for extensions file
+    "copilot-instructions.md": "markdown"                                      // Copilot instruction files (markdown format)
+  },
+
+  // 🔵 TypeScript -----------------------------------------------------------------------------------------------------------
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "typescript.updateImportsOnFileMove.enabled": "always",                      // Update imports on move
+  "typescript.preferences.importModuleSpecifier": "relative",                  // Use relative imports
+  "typescript.suggest.autoImports": true,                                      // Auto-add imports
+
+  "tailwindCSS.experimental.classRegex": [                                    // Tailwind class extraction from cn() function
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+
+ // 🅰️ YAML -----------------------------------------------------------------------------------------------------------------
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  "[yml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  "yaml.schemas": {
+    // GitHub Actions workflow validation and IntelliSense
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*",
+    // GitHub Actions action.yml validation
+    "https://json.schemastore.org/github-action.json": ".github/actions/*/action.yml",
+    // Docker Compose file validation
+    "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": "compose.yaml"
+  },
+
+  // 🟪 CSS ------------------------------------------------------------------------------------------------------------------
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.formatOnSave": true
+  },
+}
